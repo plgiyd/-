@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>색깔코드</title>
+</head>
+<body>
+    <h1 class="title">나의 색깔 코드</h1>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>색깔코드</title>
+    <style>
+        body {
+            background-color: rgb(255, 255, 255);
+        }
+    </style>
+</head>
+<body>
+    <h1 class="title">나의 색깔 코드</h1>
+    <label for="red">R 값:</label>
+    <input type="range" id="red" name="red" min="0" max="255" step="1" value="255" oninput="changeColor()">
+    <br>
+    <label for="green">G 값:</label>
+    <input type="range" id="green" name="green" min="0" max="255" step="1" value="255" oninput="changeColor()">
+    <br>
+    <label for="blue">B 값:</label>
+    <input type="range" id="blue" name="blue" min="0" max="255" step="1" value="255" oninput="changeColor()">
+    <br>
+    <p id="color-code">RGB (255, 255, 255) - #FFFFFF</p>
+    <script>
+        function changeColor() {
+            var r = document.getElementById("red").value;
+            var g = document.getElementById("green").value;
+            var b = document.getElementById("blue").value;
+            document.body.style.backgroundColor = "rgb(" + r + ", " + g + ", " + b + ")";
+            var hex = rgbToHex(r, g, b);
+            document.getElementById("color-code").innerHTML = "RGB (" + r + ", " + g + ", " + b + ") - " + hex;
+        }
+
+        function mixColors(color1, color2) {
+            var r = Math.floor((color1.r + color2.r) / 2);
+            var g = Math.floor((color1.g + color2.g) / 2);
+            var b = Math.floor((color1.b + color2.b) / 2);
+            return "rgb(" + r + ", " + g + ", " + b + ")";
+        }
+
+        function rgbToHex(r, g, b) {
+            r = Number(r).toString(16).padStart(2, '0');
+            g = Number(g).toString(16).padStart(2, '0');
+            b = Number(b).toString(16).padStart(2, '0');
+            return "#" + r + g + b;
+        }
+    </script>
+</body>
+</html>
+
+
+</body>
+</html>
+
+
+</body>
+</html>
